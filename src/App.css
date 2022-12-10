@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+@media screen and (max-width:768px) {
+  button.btn-small{
+    --bs-btn-padding-y: 0.25rem;
+    --bs-btn-padding-x: 0.5rem;
+    --bs-btn-font-size: 0.875rem;
+    --bs-btn-border-radius: 0.25rem;
+  }
+
+  button.small-padding{
+    padding: 1px;
+  }
+}

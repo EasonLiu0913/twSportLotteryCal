@@ -320,29 +320,29 @@ function App() {
     }
 
     function handleBetRateChange(e) {
-        console.log('handleBetRateChange e', e.target.value);
+        // console.log('handleBetRateChange e', e.target.value);
 
         // console.log('handleBetRateChange e', e.target.dataset.betId);
-        console.log('e.target.dataset.value', e.target.dataset.value);
+        // console.log('e.target.dataset.value', e.target.dataset.value);
 
         if (e.target.dataset.target === 'delete') {
             const originalData = { ...betResultObj };
             delete originalData[e.target.dataset.betId];
 
-            console.log('originalData', originalData);
-            setBetResultObj(originalData);
+            // console.log('originalData', originalData);
+            // setBetResultObj(originalData);
         } else {
             const newValue = e.target.value
                 ? e.target.value
                 : +e.target.dataset.value === 1
                 ? 0
                 : 1;
-            console.log('handleBetRateChange  newValue', newValue);
+            // console.log('handleBetRateChange  newValue', newValue);
             const originalData = { ...betResultObj };
             originalData[e.target.dataset.betId][e.target.dataset.target] =
                 newValue;
 
-            console.log('originalData', originalData);
+            // console.log('originalData', originalData);
             setBetResultObj(originalData);
         }
     }
@@ -371,8 +371,8 @@ function App() {
                             ))}
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-4 offset-2">
+                <div className="row align-items-start">
+                    <div className="col-6 col-md-4 offset-md-2">
                         {/* 不讓分 */}
                         <div className="border p-3 bg-light mb-3">
                             <h5 className="bet-title">不讓分</h5>
@@ -725,10 +725,10 @@ function App() {
                         <div className="border p-3 bg-light my-3">
                             <h5 className="bet-title">正確比數</h5>
                             <div className="row justify-content-between g-1">
-                                <div className="col-auto">
+                                <div className="col-4">
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small"
                                             data-bet-title="正確比數"
                                             data-bet-id="70"
                                             onClick={handleClickBetBtn}
@@ -739,7 +739,7 @@ function App() {
 
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="71"
                                             onClick={handleClickBetBtn}
@@ -750,7 +750,7 @@ function App() {
 
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="72"
                                             onClick={handleClickBetBtn}
@@ -761,7 +761,7 @@ function App() {
 
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="73"
                                             onClick={handleClickBetBtn}
@@ -772,7 +772,7 @@ function App() {
 
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="74"
                                             onClick={handleClickBetBtn}
@@ -783,7 +783,7 @@ function App() {
 
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="75"
                                             onClick={handleClickBetBtn}
@@ -794,7 +794,7 @@ function App() {
 
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="76"
                                             onClick={handleClickBetBtn}
@@ -805,7 +805,7 @@ function App() {
 
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="77"
                                             onClick={handleClickBetBtn}
@@ -816,7 +816,7 @@ function App() {
 
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="78"
                                             onClick={handleClickBetBtn}
@@ -827,7 +827,7 @@ function App() {
 
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="79"
                                             onClick={handleClickBetBtn}
@@ -838,7 +838,7 @@ function App() {
 
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="80"
                                             onClick={handleClickBetBtn}
@@ -849,7 +849,7 @@ function App() {
 
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="81"
                                             onClick={handleClickBetBtn}
@@ -860,7 +860,7 @@ function App() {
 
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="82"
                                             onClick={handleClickBetBtn}
@@ -871,7 +871,7 @@ function App() {
 
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="83"
                                             onClick={handleClickBetBtn}
@@ -882,7 +882,7 @@ function App() {
 
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="84"
                                             onClick={handleClickBetBtn}
@@ -892,10 +892,10 @@ function App() {
                                     </div>
                                 </div>
 
-                                <div className="col-auto">
+                                <div className="col-4">
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="85"
                                             onClick={handleClickBetBtn}
@@ -905,7 +905,7 @@ function App() {
                                     </div>
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="86"
                                             onClick={handleClickBetBtn}
@@ -915,7 +915,7 @@ function App() {
                                     </div>
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="87"
                                             onClick={handleClickBetBtn}
@@ -925,7 +925,7 @@ function App() {
                                     </div>
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="88"
                                             onClick={handleClickBetBtn}
@@ -935,7 +935,7 @@ function App() {
                                     </div>
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="89"
                                             onClick={handleClickBetBtn}
@@ -945,7 +945,7 @@ function App() {
                                     </div>
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small small-padding"
                                             data-bet-title="正確比數"
                                             data-bet-id="90"
                                             onClick={handleClickBetBtn}
@@ -955,10 +955,10 @@ function App() {
                                     </div>
                                 </div>
 
-                                <div className="col-auto">
+                                <div className="col-4">
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="91"
                                             onClick={handleClickBetBtn}
@@ -968,7 +968,7 @@ function App() {
                                     </div>
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="92"
                                             onClick={handleClickBetBtn}
@@ -978,7 +978,7 @@ function App() {
                                     </div>
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="93"
                                             onClick={handleClickBetBtn}
@@ -988,7 +988,7 @@ function App() {
                                     </div>
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="94"
                                             onClick={handleClickBetBtn}
@@ -998,7 +998,7 @@ function App() {
                                     </div>
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="95"
                                             onClick={handleClickBetBtn}
@@ -1008,7 +1008,7 @@ function App() {
                                     </div>
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="96"
                                             onClick={handleClickBetBtn}
@@ -1018,7 +1018,7 @@ function App() {
                                     </div>
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="97"
                                             onClick={handleClickBetBtn}
@@ -1028,7 +1028,7 @@ function App() {
                                     </div>
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="98"
                                             onClick={handleClickBetBtn}
@@ -1038,7 +1038,7 @@ function App() {
                                     </div>
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="99"
                                             onClick={handleClickBetBtn}
@@ -1048,7 +1048,7 @@ function App() {
                                     </div>
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="100"
                                             onClick={handleClickBetBtn}
@@ -1058,7 +1058,7 @@ function App() {
                                     </div>
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="101"
                                             onClick={handleClickBetBtn}
@@ -1068,7 +1068,7 @@ function App() {
                                     </div>
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="102"
                                             onClick={handleClickBetBtn}
@@ -1078,7 +1078,7 @@ function App() {
                                     </div>
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="103"
                                             onClick={handleClickBetBtn}
@@ -1088,7 +1088,7 @@ function App() {
                                     </div>
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="104"
                                             onClick={handleClickBetBtn}
@@ -1098,7 +1098,7 @@ function App() {
                                     </div>
                                     <div className="my-2">
                                         <button
-                                            className="btn btn-secondary "
+                                            className="btn btn-secondary btn-small "
                                             data-bet-title="正確比數"
                                             data-bet-id="105"
                                             onClick={handleClickBetBtn}
@@ -1111,7 +1111,10 @@ function App() {
                         </div>
                     </div>
 
-                    <div className="col-4 bg-info py-3">
+                    <div
+                        className="col-6 col-md-4 bg-info py-3 position-sticky"
+                        style={{ top: 0 }}
+                    >
                         <h5
                             className="text-center btn btn-dark w-100"
                             style={{ borderRadius: 0 }}
