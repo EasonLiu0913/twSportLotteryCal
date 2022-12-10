@@ -330,7 +330,7 @@ function App() {
             delete originalData[e.target.dataset.betId];
 
             // console.log('originalData', originalData);
-            // setBetResultObj(originalData);
+            setBetResultObj(originalData);
         } else {
             const newValue = e.target.value
                 ? e.target.value
