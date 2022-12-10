@@ -187,10 +187,6 @@ function App() {
                     console.log('result', result);
 
                     const tatalReward = result.reduce((prev, currentId) => {
-                        console.log(
-                            'betResultObj[currentId]',
-                            betResultObj[currentId]
-                        );
                         return betResultObj[currentId].isVisible
                             ? betResultObj[currentId].rateValue *
                                   betAmount *
@@ -198,9 +194,6 @@ function App() {
                                   prev
                             : 0;
                     }, 0);
-
-                    console.log('tatalReward', tatalReward);
-
                     return {
                         cardTitle: entries[0],
                         isBet: !!result.length,

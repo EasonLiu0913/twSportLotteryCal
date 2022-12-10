@@ -9,7 +9,7 @@ export default function CalResult(props) {
             style={{ minWidth: '60px' }}
         >
             <p className="m-0">{cardTitle}</p>
-            <p className="m-0">{tatalReward + ''}</p>
+            <p className="m-0">{parseInt(tatalReward)}</p>
         </div>
     );
 }
