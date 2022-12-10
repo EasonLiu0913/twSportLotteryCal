@@ -1153,7 +1153,9 @@ function App() {
                         >
                             <p className=" text-danger h5">總投注金額：</p>
                             <p className=" text-danger h5">{`$${
-                                Object.values(betResultObj).length *
+                                Object.values(betResultObj).filter(
+                                    (item) => item.isVisible
+                                ).length *
                                 betAmount *
                                 10
                             } NTD`}</p>
