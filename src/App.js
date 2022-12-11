@@ -350,815 +350,829 @@ function App() {
     return (
         <>
             <div className="container mt-3">
-                <div className="row mb-3" style={{ overflow: 'auto' }}>
-                    <h5>左邊客隊＠右邊主隊</h5>
-                    <div className="d-flex my-2">
-                        {calDrawResultArray.length > 0 &&
-                            calDrawResultArray.map((data) => (
-                                <CalResult key={data.cardTitle} data={data} />
-                            ))}
-                    </div>
-                    <div className="d-flex my-2">
-                        {calCustomResultArray.length > 0 &&
-                            calCustomResultArray.map((data) => (
-                                <CalResult key={data.cardTitle} data={data} />
-                            ))}
-                    </div>
-                    <div className="d-flex my-2">
-                        {calHostResultArray.length > 0 &&
-                            calHostResultArray.map((data) => (
-                                <CalResult key={data.cardTitle} data={data} />
-                            ))}
-                    </div>
-                </div>
-                <div className="row align-items-start">
-                    <div className="col-6 col-md-4 offset-md-2">
-                        {/* 不讓分 */}
-                        <div className="border p-3 bg-light mb-3">
-                            <h5 className="bet-title">不讓分</h5>
-                            <div className="row justify-content-between g-1">
-                                <div className="col-auto">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="不讓分"
-                                        data-bet-id="1"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>左邊客隊</span>
-                                    </button>
-                                </div>
-                                <div className="col-auto">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="不讓分"
-                                        data-bet-id="2"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>和局</span>
-                                    </button>
-                                </div>
-                                <div className="col-auto">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="不讓分"
-                                        data-bet-id="3"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>右邊主隊</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* 兩隊是否都進球 */}
-                        <div className="border p-3 bg-light my-3">
-                            <h5 className="bet-title">兩隊是否都進球</h5>
-                            <div className="row justify-content-between g-1">
-                                <div className="col-auto">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="兩隊是否都進球"
-                                        data-bet-id="33"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>是</span>
-                                    </button>
-                                </div>
-                                <div className="col-auto">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="兩隊是否都進球"
-                                        data-bet-id="34"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>否</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* 大小 */}
-                        <div className="border p-3 bg-light my-3">
-                            <h5 className="bet-title">大小</h5>
-
-                            <p>大小[總分]</p>
-                            <div className="row justify-content-between g-1 my-2">
-                                <div className="col-6">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="大小[總分]"
-                                        data-bet-id="1001"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>大 0.5</span>
-                                    </button>
-                                </div>
-                                <div className="col-6">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="大小[總分]"
-                                        data-bet-id="1002"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>小 0.5</span>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div className="row justify-content-between g-1 my-2">
-                                <div className="col-6">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="大小[總分]"
-                                        data-bet-id="1003"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>大 1.5</span>
-                                    </button>
-                                </div>
-                                <div className="col-6">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="大小[總分]"
-                                        data-bet-id="1004"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>小 1.5</span>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div className="row justify-content-between g-1 my-2">
-                                <div className="col-6">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="大小[總分]"
-                                        data-bet-id="1005"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>大 2.5</span>
-                                    </button>
-                                </div>
-                                <div className="col-6">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="大小[總分]"
-                                        data-bet-id="1006"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>小 2.5</span>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div className="row justify-content-between g-1 my-2">
-                                <div className="col-6">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="大小[總分]"
-                                        data-bet-id="1007"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>大 3.5</span>
-                                    </button>
-                                </div>
-                                <div className="col-6">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="大小[總分]"
-                                        data-bet-id="1008"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>小 3.5</span>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <p>大小[主隊]</p>
-                            <div className="row justify-content-between g-1 my-2">
-                                <div className="col-6">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="大小[主隊]"
-                                        data-bet-id="1009"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>大 0.5</span>
-                                    </button>
-                                </div>
-                                <div className="col-6">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="大小[主隊]"
-                                        data-bet-id="1010"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>小 0.5</span>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div className="row justify-content-between g-1 my-2">
-                                <div className="col-6">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="大小[主隊]"
-                                        data-bet-id="1011"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>大 1.5</span>
-                                    </button>
-                                </div>
-                                <div className="col-6">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="大小[主隊]"
-                                        data-bet-id="1012"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>小 1.5</span>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div className="row justify-content-between g-1 my-2">
-                                <div className="col-6">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="大小[主隊]]"
-                                        data-bet-id="1013"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>大 2.5</span>
-                                    </button>
-                                </div>
-                                <div className="col-6">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="大小[主隊]"
-                                        data-bet-id="1014"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>小 2.5</span>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div className="row justify-content-between g-1 my-2">
-                                <div className="col-6">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="大小[主隊]"
-                                        data-bet-id="1015"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>大 3.5</span>
-                                    </button>
-                                </div>
-                                <div className="col-6">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="大小[主隊]"
-                                        data-bet-id="1016"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>小 3.5</span>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <p>大小[客隊]</p>
-                            <div className="row justify-content-between g-1 my-2">
-                                <div className="col-6">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="大小[客隊]"
-                                        data-bet-id="1017"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>大 0.5</span>
-                                    </button>
-                                </div>
-                                <div className="col-6">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="大小[客隊]"
-                                        data-bet-id="1018"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>小 0.5</span>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div className="row justify-content-between g-1 my-2">
-                                <div className="col-6">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="大小[客隊]"
-                                        data-bet-id="1019"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>大 1.5</span>
-                                    </button>
-                                </div>
-                                <div className="col-6">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="大小[客隊]"
-                                        data-bet-id="1020"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>小 1.5</span>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div className="row justify-content-between g-1 my-2">
-                                <div className="col-6">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="大小[客隊]]"
-                                        data-bet-id="1021"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>大 2.5</span>
-                                    </button>
-                                </div>
-                                <div className="col-6">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="大小[客隊]"
-                                        data-bet-id="1022"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>小 2.5</span>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div className="row justify-content-between g-1 my-2">
-                                <div className="col-6">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="大小[客隊]"
-                                        data-bet-id="1023"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>大 3.5</span>
-                                    </button>
-                                </div>
-                                <div className="col-6">
-                                    <button
-                                        className="btn btn-secondary"
-                                        data-bet-title="大小[客隊]"
-                                        data-bet-id="1024"
-                                        onClick={handleClickBetBtn}
-                                    >
-                                        <span>小 3.5</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* 正確比數 */}
-                        <div className="border p-3 bg-light my-3">
-                            <h5 className="bet-title">正確比數</h5>
-                            <div className="row justify-content-between g-1">
-                                <div className="col-4">
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small"
-                                            data-bet-title="正確比數"
-                                            data-bet-id="70"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>1:0</span>
-                                        </button>
-                                    </div>
-
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="71"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>2:0</span>
-                                        </button>
-                                    </div>
-
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="72"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>2:1</span>
-                                        </button>
-                                    </div>
-
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="73"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>3:0</span>
-                                        </button>
-                                    </div>
-
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="74"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>3:1</span>
-                                        </button>
-                                    </div>
-
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="75"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>3:2</span>
-                                        </button>
-                                    </div>
-
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="76"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>4:0</span>
-                                        </button>
-                                    </div>
-
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="77"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>4:1</span>
-                                        </button>
-                                    </div>
-
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="78"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>4:2</span>
-                                        </button>
-                                    </div>
-
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="79"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>4:3</span>
-                                        </button>
-                                    </div>
-
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="80"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>5+:0</span>
-                                        </button>
-                                    </div>
-
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="81"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>5+:1</span>
-                                        </button>
-                                    </div>
-
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="82"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>5+:2</span>
-                                        </button>
-                                    </div>
-
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="83"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>5+:3</span>
-                                        </button>
-                                    </div>
-
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="84"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>5+:4</span>
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <div className="col-4">
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="85"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>0:0</span>
-                                        </button>
-                                    </div>
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="86"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>1:1</span>
-                                        </button>
-                                    </div>
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="87"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>2:2</span>
-                                        </button>
-                                    </div>
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="88"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>3:3</span>
-                                        </button>
-                                    </div>
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="89"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>4:4</span>
-                                        </button>
-                                    </div>
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small small-padding"
-                                            data-bet-title="正確比數"
-                                            data-bet-id="90"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>5+:5+</span>
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <div className="col-4">
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="91"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>0:1</span>
-                                        </button>
-                                    </div>
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="92"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>0:2</span>
-                                        </button>
-                                    </div>
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="93"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>1:2</span>
-                                        </button>
-                                    </div>
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="94"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>0:3</span>
-                                        </button>
-                                    </div>
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="95"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>1:3</span>
-                                        </button>
-                                    </div>
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="96"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>2:3</span>
-                                        </button>
-                                    </div>
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="97"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>0:4</span>
-                                        </button>
-                                    </div>
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="98"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>1:4</span>
-                                        </button>
-                                    </div>
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="99"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>2:4</span>
-                                        </button>
-                                    </div>
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="100"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>3:4</span>
-                                        </button>
-                                    </div>
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="101"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>0:5+</span>
-                                        </button>
-                                    </div>
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="102"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>1:5+</span>
-                                        </button>
-                                    </div>
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="103"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>2:5+</span>
-                                        </button>
-                                    </div>
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="104"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>3:5+</span>
-                                        </button>
-                                    </div>
-                                    <div className="my-2">
-                                        <button
-                                            className="btn btn-secondary btn-small "
-                                            data-bet-title="正確比數"
-                                            data-bet-id="105"
-                                            onClick={handleClickBetBtn}
-                                        >
-                                            <span>4:5+</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                <div className="row align-items-md-start justify-content-center">
                     <div
-                        className="col-6 col-md-4 bg-info py-3 position-sticky"
-                        style={{ top: 0 }}
+                        className="row col-md-5 offset-md-0 col-lg-3  mb-3 justify-content-md-end"
+                        style={{ overflow: 'auto' }}
                     >
-                        <h5
-                            className="text-center btn btn-dark w-100"
-                            style={{ borderRadius: 0 }}
-                        >
-                            投注單
-                        </h5>
-                        <div id="betResult">
-                            {Object.values(betResultObj).length > 0 &&
-                                Object.entries(betResultObj).map((data) => (
-                                    <BetResult
-                                        key={data[0]}
-                                        betId={data[0]}
-                                        data={data[1]}
-                                        handleBetRateChange={
-                                            handleBetRateChange
-                                        }
+                        <h5 className="text-md-end me-2">左邊客隊＠右邊主隊</h5>
+                        <div className="col-md-auto d-flex flex-md-column my-2 ">
+                            {calDrawResultArray.length > 0 &&
+                                calDrawResultArray.map((data) => (
+                                    <CalResult
+                                        key={data.cardTitle}
+                                        data={data}
                                     />
                                 ))}
                         </div>
-                        <div className="bg-white mt-3 p-2 d-flex flex-wrap align-items-center">
-                            <span className="m-0 me-2">
-                                組合投注金額：$10 x
-                            </span>
-                            <input
-                                className="flex-shrink-1"
-                                type="text"
-                                defaultValue={betAmount}
-                                size="5"
-                                onChange={handleBetAmount}
-                            />
+                        <div className="col-md-auto d-flex flex-md-column my-2 ">
+                            {calCustomResultArray.length > 0 &&
+                                calCustomResultArray.map((data) => (
+                                    <CalResult
+                                        key={data.cardTitle}
+                                        data={data}
+                                    />
+                                ))}
+                        </div>
+                        <div className="col-md-auto d-flex flex-md-column my-2 ">
+                            {calHostResultArray.length > 0 &&
+                                calHostResultArray.map((data) => (
+                                    <CalResult
+                                        key={data.cardTitle}
+                                        data={data}
+                                    />
+                                ))}
+                        </div>
+                    </div>
+                    <div className="row col-md-7 align-items-start">
+                        <div className="col-6 col-md-6">
+                            {/* 不讓分 */}
+                            <div className="border p-3 bg-light mb-3">
+                                <h5 className="bet-title">不讓分</h5>
+                                <div className="row justify-content-between g-1">
+                                    <div className="col-auto">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="不讓分"
+                                            data-bet-id="1"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>左邊客隊</span>
+                                        </button>
+                                    </div>
+                                    <div className="col-auto">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="不讓分"
+                                            data-bet-id="2"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>和局</span>
+                                        </button>
+                                    </div>
+                                    <div className="col-auto">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="不讓分"
+                                            data-bet-id="3"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>右邊主隊</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* 兩隊是否都進球 */}
+                            <div className="border p-3 bg-light my-3">
+                                <h5 className="bet-title">兩隊是否都進球</h5>
+                                <div className="row justify-content-between g-1">
+                                    <div className="col-auto">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="兩隊是否都進球"
+                                            data-bet-id="33"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>是</span>
+                                        </button>
+                                    </div>
+                                    <div className="col-auto">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="兩隊是否都進球"
+                                            data-bet-id="34"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>否</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* 大小 */}
+                            <div className="border p-3 bg-light my-3">
+                                <h5 className="bet-title">大小</h5>
+
+                                <p>大小[總分]</p>
+                                <div className="row justify-content-between g-1 my-2">
+                                    <div className="col-6">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="大小[總分]"
+                                            data-bet-id="1001"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>大 0.5</span>
+                                        </button>
+                                    </div>
+                                    <div className="col-6">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="大小[總分]"
+                                            data-bet-id="1002"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>小 0.5</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div className="row justify-content-between g-1 my-2">
+                                    <div className="col-6">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="大小[總分]"
+                                            data-bet-id="1003"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>大 1.5</span>
+                                        </button>
+                                    </div>
+                                    <div className="col-6">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="大小[總分]"
+                                            data-bet-id="1004"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>小 1.5</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div className="row justify-content-between g-1 my-2">
+                                    <div className="col-6">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="大小[總分]"
+                                            data-bet-id="1005"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>大 2.5</span>
+                                        </button>
+                                    </div>
+                                    <div className="col-6">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="大小[總分]"
+                                            data-bet-id="1006"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>小 2.5</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div className="row justify-content-between g-1 my-2">
+                                    <div className="col-6">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="大小[總分]"
+                                            data-bet-id="1007"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>大 3.5</span>
+                                        </button>
+                                    </div>
+                                    <div className="col-6">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="大小[總分]"
+                                            data-bet-id="1008"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>小 3.5</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <p>大小[主隊]</p>
+                                <div className="row justify-content-between g-1 my-2">
+                                    <div className="col-6">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="大小[主隊]"
+                                            data-bet-id="1009"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>大 0.5</span>
+                                        </button>
+                                    </div>
+                                    <div className="col-6">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="大小[主隊]"
+                                            data-bet-id="1010"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>小 0.5</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div className="row justify-content-between g-1 my-2">
+                                    <div className="col-6">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="大小[主隊]"
+                                            data-bet-id="1011"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>大 1.5</span>
+                                        </button>
+                                    </div>
+                                    <div className="col-6">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="大小[主隊]"
+                                            data-bet-id="1012"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>小 1.5</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div className="row justify-content-between g-1 my-2">
+                                    <div className="col-6">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="大小[主隊]]"
+                                            data-bet-id="1013"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>大 2.5</span>
+                                        </button>
+                                    </div>
+                                    <div className="col-6">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="大小[主隊]"
+                                            data-bet-id="1014"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>小 2.5</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div className="row justify-content-between g-1 my-2">
+                                    <div className="col-6">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="大小[主隊]"
+                                            data-bet-id="1015"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>大 3.5</span>
+                                        </button>
+                                    </div>
+                                    <div className="col-6">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="大小[主隊]"
+                                            data-bet-id="1016"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>小 3.5</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <p>大小[客隊]</p>
+                                <div className="row justify-content-between g-1 my-2">
+                                    <div className="col-6">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="大小[客隊]"
+                                            data-bet-id="1017"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>大 0.5</span>
+                                        </button>
+                                    </div>
+                                    <div className="col-6">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="大小[客隊]"
+                                            data-bet-id="1018"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>小 0.5</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div className="row justify-content-between g-1 my-2">
+                                    <div className="col-6">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="大小[客隊]"
+                                            data-bet-id="1019"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>大 1.5</span>
+                                        </button>
+                                    </div>
+                                    <div className="col-6">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="大小[客隊]"
+                                            data-bet-id="1020"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>小 1.5</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div className="row justify-content-between g-1 my-2">
+                                    <div className="col-6">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="大小[客隊]]"
+                                            data-bet-id="1021"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>大 2.5</span>
+                                        </button>
+                                    </div>
+                                    <div className="col-6">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="大小[客隊]"
+                                            data-bet-id="1022"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>小 2.5</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div className="row justify-content-between g-1 my-2">
+                                    <div className="col-6">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="大小[客隊]"
+                                            data-bet-id="1023"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>大 3.5</span>
+                                        </button>
+                                    </div>
+                                    <div className="col-6">
+                                        <button
+                                            className="btn btn-secondary"
+                                            data-bet-title="大小[客隊]"
+                                            data-bet-id="1024"
+                                            onClick={handleClickBetBtn}
+                                        >
+                                            <span>小 3.5</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* 正確比數 */}
+                            <div className="border p-3 bg-light my-3">
+                                <h5 className="bet-title">正確比數</h5>
+                                <div className="row justify-content-between g-1">
+                                    <div className="col-4">
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small"
+                                                data-bet-title="正確比數"
+                                                data-bet-id="70"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>1:0</span>
+                                            </button>
+                                        </div>
+
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="71"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>2:0</span>
+                                            </button>
+                                        </div>
+
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="72"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>2:1</span>
+                                            </button>
+                                        </div>
+
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="73"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>3:0</span>
+                                            </button>
+                                        </div>
+
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="74"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>3:1</span>
+                                            </button>
+                                        </div>
+
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="75"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>3:2</span>
+                                            </button>
+                                        </div>
+
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="76"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>4:0</span>
+                                            </button>
+                                        </div>
+
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="77"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>4:1</span>
+                                            </button>
+                                        </div>
+
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="78"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>4:2</span>
+                                            </button>
+                                        </div>
+
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="79"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>4:3</span>
+                                            </button>
+                                        </div>
+
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="80"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>5+:0</span>
+                                            </button>
+                                        </div>
+
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="81"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>5+:1</span>
+                                            </button>
+                                        </div>
+
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="82"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>5+:2</span>
+                                            </button>
+                                        </div>
+
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="83"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>5+:3</span>
+                                            </button>
+                                        </div>
+
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="84"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>5+:4</span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div className="col-4">
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="85"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>0:0</span>
+                                            </button>
+                                        </div>
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="86"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>1:1</span>
+                                            </button>
+                                        </div>
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="87"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>2:2</span>
+                                            </button>
+                                        </div>
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="88"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>3:3</span>
+                                            </button>
+                                        </div>
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="89"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>4:4</span>
+                                            </button>
+                                        </div>
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small small-padding"
+                                                data-bet-title="正確比數"
+                                                data-bet-id="90"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>5+:5+</span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div className="col-4">
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="91"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>0:1</span>
+                                            </button>
+                                        </div>
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="92"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>0:2</span>
+                                            </button>
+                                        </div>
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="93"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>1:2</span>
+                                            </button>
+                                        </div>
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="94"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>0:3</span>
+                                            </button>
+                                        </div>
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="95"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>1:3</span>
+                                            </button>
+                                        </div>
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="96"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>2:3</span>
+                                            </button>
+                                        </div>
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="97"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>0:4</span>
+                                            </button>
+                                        </div>
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="98"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>1:4</span>
+                                            </button>
+                                        </div>
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="99"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>2:4</span>
+                                            </button>
+                                        </div>
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="100"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>3:4</span>
+                                            </button>
+                                        </div>
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="101"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>0:5+</span>
+                                            </button>
+                                        </div>
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="102"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>1:5+</span>
+                                            </button>
+                                        </div>
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="103"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>2:5+</span>
+                                            </button>
+                                        </div>
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="104"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>3:5+</span>
+                                            </button>
+                                        </div>
+                                        <div className="my-2">
+                                            <button
+                                                className="btn btn-secondary btn-small "
+                                                data-bet-title="正確比數"
+                                                data-bet-id="105"
+                                                onClick={handleClickBetBtn}
+                                            >
+                                                <span>4:5+</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div
-                            className="total d-flex justify-content-between mt-3 p-1"
-                            style={{ fontWeight: '900' }}
+                            className="col-6 col-md-6 bg-info py-3 position-sticky"
+                            style={{ top: 0 }}
                         >
-                            <p className=" text-danger h5">總投注金額：</p>
-                            <p className=" text-danger h5">{`$${
-                                Object.values(betResultObj).filter(
-                                    (item) => item.isVisible
-                                ).length *
-                                betAmount *
-                                10
-                            } NTD`}</p>
+                            <h5
+                                className="text-center btn btn-dark w-100"
+                                style={{ borderRadius: 0 }}
+                            >
+                                投注單
+                            </h5>
+                            <div id="betResult">
+                                {Object.values(betResultObj).length > 0 &&
+                                    Object.entries(betResultObj).map((data) => (
+                                        <BetResult
+                                            key={data[0]}
+                                            betId={data[0]}
+                                            data={data[1]}
+                                            handleBetRateChange={
+                                                handleBetRateChange
+                                            }
+                                        />
+                                    ))}
+                            </div>
+                            <div className="bg-white mt-3 p-2 d-flex flex-wrap align-items-center">
+                                <span className="m-0 me-2">
+                                    組合投注金額：$10 x
+                                </span>
+                                <input
+                                    className="flex-shrink-1"
+                                    type="text"
+                                    defaultValue={betAmount}
+                                    size="5"
+                                    onChange={handleBetAmount}
+                                />
+                            </div>
+
+                            <div
+                                className="total d-flex justify-content-between mt-3 p-1"
+                                style={{ fontWeight: '900' }}
+                            >
+                                <p className=" text-danger h5">總投注金額：</p>
+                                <p className=" text-danger h5">{`$${
+                                    Object.values(betResultObj).filter(
+                                        (item) => item.isVisible
+                                    ).length *
+                                    betAmount *
+                                    10
+                                } NTD`}</p>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -5,11 +5,13 @@ export default function CalResult(props) {
 
     return (
         <div
-            className="accordion-collapsecal-result-card bg-white mx-2 text-center border"
+            className={`accordion-collapsecal-result-card m-2 m-md-0 mb-md-2 text-center border ${
+                tatalReward > 0 ? 'bg-light' : 'bg-dark text-light'
+            }`}
             style={{ minWidth: '60px' }}
         >
             <p className="m-0">{cardTitle}</p>
-            <p className="m-0">{parseInt(tatalReward)}</p>
+            <p className={`m-0`}>{parseInt(tatalReward)}</p>
         </div>
     );
 }

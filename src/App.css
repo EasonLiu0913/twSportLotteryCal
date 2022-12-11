@@ -37,6 +37,10 @@
   }
 }
 
+button.small-padding{
+  padding: 3px;
+}
+
 @media screen and (max-width:768px) {
   button.btn-small{
     --bs-btn-padding-y: 0.25rem;
@@ -48,4 +52,6 @@
   button.small-padding{
     padding: 1px;
   }
+  
 }
+
