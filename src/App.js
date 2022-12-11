@@ -168,7 +168,6 @@ function App() {
 
     useEffect(() => {
         // betResultArray changed
-
         updateBetResult();
     }, [betResultObj]);
 
@@ -201,8 +200,6 @@ function App() {
                     };
                 }
             );
-
-            // console.log('newResultCards', newResultCards);
             setCalDrawResultArray(newResultCards);
 
             // 計算客場勝
@@ -280,17 +277,10 @@ function App() {
     }
 
     function handleClickBetBtn(e) {
-        // console.log('e', e);
-        // console.log('e', e.target.nodeName);
-        // console.log('e currentTarget', e.currentTarget);
-        // console.log('e currentTarget nodeName', e.currentTarget.nodeName);
-
         if (
             e.currentTarget.nodeName === 'BUTTON' &&
             betResultObj[e.currentTarget.dataset.betId] === undefined
         ) {
-            // console.log('bet target name', e.currentTarget.innerText);
-            // console.log('bet sort name', e.currentTarget.dataset.betTitle);
             const originalData = {
                 ...betResultObj,
                 [e.currentTarget.dataset.betId]: {
@@ -300,36 +290,24 @@ function App() {
                     isVisible: 1,
                 },
             };
-            // console.log('originalData', originalData);
             setBetResultObj(originalData);
-            setBetTotal(
-                Object.values(originalData).reduce(
-                    (accumulator, currentValue) => {
-                        console.log(currentValue);
-                        return currentValue.rateValue;
-                    },
-                    0
-                )
-            );
+
+            let betTotal = 0;
+            for (const [id, data] of Object.entries(originalData)) {
+                betTotal += data.rateValue;
+            }
+            setBetTotal(betTotal);
         }
     }
 
     function handleBetAmount(e) {
-        // console.log(e.target.value);
         setBetAmount(e.target.value);
     }
 
     function handleBetRateChange(e) {
-        // console.log('handleBetRateChange e', e.target.value);
-
-        // console.log('handleBetRateChange e', e.target.dataset.betId);
-        // console.log('e.target.dataset.value', e.target.dataset.value);
-
         if (e.target.dataset.target === 'delete') {
             const originalData = { ...betResultObj };
             delete originalData[e.target.dataset.betId];
-
-            // console.log('originalData', originalData);
             setBetResultObj(originalData);
         } else {
             const newValue = e.target.value
@@ -337,12 +315,9 @@ function App() {
                 : +e.target.dataset.value === 1
                 ? 0
                 : 1;
-            // console.log('handleBetRateChange  newValue', newValue);
             const originalData = { ...betResultObj };
             originalData[e.target.dataset.betId][e.target.dataset.target] =
                 newValue;
-
-            // console.log('originalData', originalData);
             setBetResultObj(originalData);
         }
     }
